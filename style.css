@@ -1,0 +1,82 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.tools{
+    display: grid;
+    background-color:  gainsboro;
+    margin: 0;
+    grid-template-columns: 2fr 1fr;
+}
+
+.inputSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+    grid-column: 1/span 1;
+    grid-column-gap: 1em;
+}
+
+/* Input  */
+.customInput{
+  display: grid;
+  /* text-align: center; */
+  padding: 0.1em 0.3em;
+  font-size: 1.3em; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  vertical-align: middle;
+  grid-gap: 0.1em;
+}
+
+#customHeading{
+  grid-area: 1/1 / 1/-1;
+}
+
+#customSz{
+  grid-area: 2/1 / 2/2;
+  margin: 0;
+}
+
+#customEle {
+  grid-area: 3/1 / 3/2;
+  margin: 0;
+}
+
+#customSzIpt{
+  grid-area: 2/2 / 2/-1;
+}
+
+#customEleIpt{
+  grid-area: 3/2 / 3/-1;
+}
+
+.randomInput{
+  display: grid;
+  /* justify-content: center; */
+  /* text-align: center; */
+  grid-template-rows: repeat(2,1fr);
+}
+
+#randomHeading{
+  grid-row: 1/2;
+}
+
+#randomSz{
+  grid-row:2/3;
+}
+
+
+.process{
+  grid-column: 2/-1;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+#randomBtn{
+  grid-column: 1/span 1;
+}
+
+#visualBtn{
+  grid-column:2/span 1;
+}

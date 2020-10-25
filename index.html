@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="tools"> 
+        <div class="inputSection">
+            <div class="customInput">  
+                <span id="customHeading">Custom Input</span>
+
+                <h5 id="customSz">Size</h5>
+                <input type="number" name="NofElements" id="customSzIpt">
+
+                <h5 id="customEle">Elements</h5>
+                <input type="text" name="" id="customEleIpt">
+            </div>
+
+            <div class="randomInput">
+                <span id="randomHeading">Random Input</span>
+
+                <span class="randomSz"><input type="checkbox" name="" id="tick" onclick="clicked()" >Size<input type="number" name="" id="randomSzIpt" disabled></span>
+
+                <button id="genArr " onclick="generate()">Generate Array</button>
+            </div>
+        </div>
+
+        <div class="process">
+            <button id="randomBtn">Randomize</button>
+            <button  id="visualBtn">Visualise</button>
+        </div>
+
+    </div>
+
+    <!-- LINKS -->
+    <script src="sketch.js"></script>
+    <script src="libraries/p5.min.js"></script>
+</body>
+
+</html>
