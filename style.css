@@ -7,14 +7,17 @@ html, body {
     display: grid;
     background-color:  gainsboro;
     margin: 0;
-    grid-template-columns: 2fr 1fr;
+    /* background: linear-gradient(280deg, rgba(2,0,36,1) 0%, rgba(9,47,121,1) 42%, rgba(0,212,255,1) 100%); */
+    grid-template-columns: repeat(2,min-content);
 }
 
 .inputSection{
     display: grid;
-    grid-template-columns: 1fr 1fr;  
+    padding: 0.6em 0.7em;
+    grid-template-columns: repeat(2,max-content);  
     grid-column: 1/span 1;
     grid-column-gap: 1em;
+    justify-content: space-between;
 }
 
 /* Input  */
@@ -23,7 +26,7 @@ html, body {
   /* text-align: center; */
   padding: 0.1em 0.3em;
   font-size: 1.3em; 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2,min-content);
   grid-template-rows: 1fr 1fr 1fr;
   vertical-align: middle;
   grid-gap: 0.1em;
@@ -60,12 +63,12 @@ html, body {
 
 #randomHeading{
   grid-row: 1/2;
+  font-size: 1.3em;
 }
 
 #randomSz{
   grid-row:2/3;
 }
-
 
 .process{
   grid-column: 2/-1;
