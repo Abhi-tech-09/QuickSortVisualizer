@@ -132,16 +132,23 @@ function isSorted(){
 const shuffleBtn = document.querySelector('#shuffleBtn');
 shuffleBtn.addEventListener("click",()=>{
 	// temp []
-	let temp = [];
-	for(let i=0;i<a.length;i++){
-	let idx = Math.round(random(0,a.length));
-	let val = a[idx];
-	temp.push(val);
-	}
-	//if(isSorted(temp)){[ temp[0] , temp[ temp.length-1 ] ]=[ temp[ temp.length-1 ], temp[0] ]}
+	console.log(a);
+	 let temp = [];
+	let val;
+	let length=a.length;
+	while(temp.length<length){
+	let idx = Math.round(random(0,a.length-1));
+	val = a[idx] ;
+	a.splice(idx,1);
+	temp.push(val);}
+	
+	// //if(isSorted(temp)){[ temp[0] , temp[ temp.length-1 ] ]=[ temp[ temp.length-1 ], temp[0] ]}
 
-	a = temp
+	 a = temp
 	console.log(temp);
+	//console.log(a);
+	
+	//console.log(temp);
 });
 
 function draw() {
