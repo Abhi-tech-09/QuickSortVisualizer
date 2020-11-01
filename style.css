@@ -7,7 +7,6 @@ html, body {
     display: grid;
     background-color:  gainsboro;
     margin: 0;
-    /* background: linear-gradient(280deg, rgba(2,0,36,1) 0%, rgba(9,47,121,1) 42%, rgba(0,212,255,1) 100%); */
     grid-template-columns: repeat(2,min-content);
 }
 
@@ -56,18 +55,20 @@ html, body {
 
 .randomInput{
   display: grid;
-  /* justify-content: center; */
-  /* text-align: center; */
   grid-template-rows: repeat(2,1fr);
 }
 
 #randomHeading{
-  grid-row: 1/2;
-  font-size: 1.3em;
+    grid-row: 1/2;
+    font-size: 1.3em;
 }
 
 #randomSz{
-  grid-row:2/3;
+    grid-row:2/3;
+}
+
+#randomSzIpt{
+    cursor: no-drop;
 }
 
 .process{

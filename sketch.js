@@ -1,16 +1,8 @@
-var w = window.innerWidth,
-	h = window.innerHeight,
-	toolsHeight = document.querySelector('.tools').offsetHeight,
-	n = 0,
-	a = [],
-	flag = [],
-	cur,
-	it1 = -1,
-	it2 = -1;
+var w = window.innerWidth, h = window.innerHeight,
+    toolsHeight = document.querySelector('.tools').offsetHeight,
+    n = 0, a = [], flag = [], cur, shuff, it1 = -1, it2 = -1, isCustom , isRandom;
 
-// 300,200,400,100
 const genBtn = document.querySelector('#genArr');
-
 function setup() {
 	let canvas = createCanvas(w, h - toolsHeight);
 	canvas.style('display', 'block');
@@ -20,71 +12,84 @@ function setup() {
 
 	visQuickSort.addEventListener('click', function checker() {
 		n = parseInt(document.querySelector('#customSzIpt').value);
+        
+        if (isCustom) {
+            if (n) {
+                a = [];
+                shuff = true
+                stringArray = document.querySelector('#customEleIpt').value;
+                stringArray += ',';
+                let num = '';
+    
+                for (let i = 0; i < stringArray.length; ++i) {
+                    let ch = stringArray[i];
+    
+                    if (ch != ',') num += ch;
+                    else {
+                        a.push(parseInt(num));
+                        num = '';
+                    }
+                }
+    
+                if (a.length == n) {
+                    genBtn.disabled = true;
+                    flag = new Array(a.length);
+                    flag.fill(0);
+                    quickSort(a, 0, a.length - 1);
+                }
+            }
+        } else { 
+            if (isRandom) { 
+                if (n < a.length)
+                    alert('Number of Elements exceeded..!');
+                else if (n > a.length)
+                    alert('We need more elements...!');
+            }
+            quickSort(a, 0, a.length - 1);
+        }
 
-		if (n) {
-			a = [];
-			stringArray = document.querySelector('#customEleIpt').value;
-			stringArray += ',';
-			let num = '';
-
-			for (let i = 0; i < stringArray.length; ++i) {
-				let ch = stringArray[i];
-
-				if (ch != ',') num += ch;
-				else {
-					a.push(parseInt(num));
-					num = '';
-				}
-			}
-
-			if (n < a.length) {
-				alert('Number of Elements exceeded..!');
-			} else if (n > a.length) {
-				alert('We need more elements...!');
-			} else {
-				genBtn.disabled = true;
-				flag = new Array(a.length);
-				flag.fill(0);
-				quickSort(a, 0, a.length - 1);
-			}
-		}
 	});
 }
 
-/*Random*/
 let mark = 0;
 function clicked() {
 	mark ^= 1;
 	let allow = document.querySelector('#randomSzIpt');
 
-	if (mark) allow.disabled = false;
-	else allow.disabled = true;
+    if (mark) {
+        allow.disabled = false;
+        allow.style.cursor = 'auto';
+    }
+    else { 
+        allow.disabled = true;
+        allow.style.cursor = 'no-drop';
+    }
 }
 
 function generate() {
 	let rdSize = document.querySelector('#randomSzIpt').value;
 	a = [];
 
-	if (!mark) n = Math.round(random(10, 50));
+	if (!mark) n = Math.round(random(100, 600));
 	else n = parseInt(rdSize);
 
 	for (let i = 0; i < n; ++i) a.push(i);
+	for (let i = 0; i < a.length; ++i) a[i] = Math.round(random(50, 500));
 
-	for (let i = 0; i < a.length; ++i) a[i] = Math.round(random(100, 500));
-
-	console.log(a);
 	flag = new Array(a.length);
-	flag.fill(0);
+    flag.fill(0);
+    
+    isRandom = true;
+    shuff = true;
 }
 
 async function quickSort(arr, low, high) {
 	if (low < high) {
 		let idx = await partition(arr, low, high);
-
 		Promise.all([ quickSort(arr, low, idx - 1), quickSort(arr, idx + 1, high) ]);
 	}
 
-	if (isSorted(a)) flag.fill(2);
+    if (isSorted(a)) flag.fill(2);
 }
 
 async function partition(arr, low, high) {
@@ -145,21 +150,22 @@ shuffleBtn.addEventListener('click', () => {
 	}
 
 	a = temp;
-	flag.fill(0);
+    flag.fill(0);
+    shuff = false;
 });
 
 function draw() {
 	background('#434343');
 	textAlign(CENTER);
-
+    assginDisable();
+    
 	if (a.length > 0) {
-		if (count(flag) != flag.length) {
+		if (flag[0]!=2 && shuff) {
 			flag[cur] = 1;
 			if (it1 >= 0) flag[it1] = flag[it2] = 3;
 		}
 
-		let hRatio = Math.round(w / a.length),
-			x = 0;
+		let hRatio = Math.round(w / a.length), x = 0;
 		let mul = w % a.length;
 		mul /= a.length;
 		hRatio += mul;
@@ -174,7 +180,7 @@ function draw() {
 			x += hRatio;
 		}
 
-		if (count(flag) != flag.length) {
+		if (flag[0]!=2 && shuff) {
 			flag[cur] = 0;
 			if (it1 >= 0) flag[it1] = flag[it2] = 0;
 		}
@@ -187,35 +193,39 @@ function assginDisable() {
 
 	if (tempN) {
 		let tempA = [];
+    
+        let tempstring = document.querySelector('#customEleIpt').value;
 
-		let tempstring = document.querySelector('#customEleIpt').value;
-		tempstring += ',';
-		let num = '';
+        if (tempstring.length > 0) { 
+            tempstring += ',';
+            let num = '';
+    
+            for (let i = 0; i < tempstring.length; ++i) {
+                let ch = tempstring[i];
+    
+                if (ch != ',') num += ch;
+                else {
+                    tempA.push(parseInt(num));
+                    num = '';
+                }
+            }
+        }
 
-		for (let i = 0; i < tempstring.length; ++i) {
-			let ch = tempstring[i];
-
-			if (ch != ',') num += ch;
-			else {
-				tempA.push(parseInt(num));
-				num = '';
-			}
-		}
-
-		if (tempA.length == tempN) genBtn.disabled = true;
-		else genBtn.disabled = false;
+        if (tempA.length == tempN) {
+            genBtn.style.cursor = 'no-drop';
+            genBtn.disabled = true;
+            isCustom = true;
+            isRandom = false;
+        }
+        else { 
+            genBtn.style.cursor = 'default';
+            genBtn.disabled = false;
+            isCustom = false;
+            isRandom = true;
+            shuff = false;
+            flag.fill(0);
+        }
 	}
-}
-
-function count(arr) {
-	let cnt = 0;
-
-	for (let i = 0; i < arr.length; ++i) {
-		cnt += arr[i] == 2;
-	}
-
-	console.log(cnt);
-	return cnt;
 }
 
 function windowResized() {
