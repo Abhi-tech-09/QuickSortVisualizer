@@ -3,84 +3,35 @@ html, body {
   padding: 0;
 }
 
-.tools{
-    display: grid;
-    background-color:  gainsboro;
-    margin: 0;
-    grid-template-columns: repeat(2,min-content);
+#tools{
+    grid-template-columns: repeat(3, max-content);
+    padding: 1rem;
+    gap: 1rem
 }
 
-.inputSection{
-    display: grid;
-    padding: 0.6em 0.7em;
-    grid-template-columns: repeat(2,max-content);  
-    grid-column: 1/span 1;
-    grid-column-gap: 1em;
-    justify-content: space-between;
+button{
+    background: white;
+    padding: 0.2em;    
+    font-size: 1.5rem;
+    outline: none;
+    border-radius: 0.5rem;
+    border: 0.25rem solid #17a2b8;
+    
+    cursor: pointer;
 }
 
-/* Input  */
-.customInput{
-  display: grid;
-  /* text-align: center; */
-  padding: 0.1em 0.3em;
-  font-size: 1.3em; 
-  grid-template-columns: repeat(2,min-content);
-  grid-template-rows: 1fr 1fr 1fr;
-  vertical-align: middle;
-  grid-gap: 0.1em;
+.customSection{
+    display: inline-block;
+    background: linear-gradient(to bottom right, #6a3093, #a044ff); 
+    border-radius: 1rem;
+    
+    padding: 0.5rem;
 }
 
-#customHeading{
-  grid-area: 1/1 / 1/-1;
-}
-
-#customSz{
-  grid-area: 2/1 / 2/2;
-  margin: 0;
-}
-
-#customEle {
-  grid-area: 3/1 / 3/2;
-  margin: 0;
-}
-
-#customSzIpt{
-  grid-area: 2/2 / 2/-1;
-}
-
-#customEleIpt{
-  grid-area: 3/2 / 3/-1;
-}
-
-.randomInput{
-  display: grid;
-  grid-template-rows: repeat(2,1fr);
-}
-
-#randomHeading{
-    grid-row: 1/2;
-    font-size: 1.3em;
-}
-
-#randomSz{
-    grid-row:2/3;
-}
-
-#randomSzIpt{
-    cursor: no-drop;
-}
-
-.process{
-  grid-column: 2/-1;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-}
-
-#randomBtn{
-  grid-column: 1/span 1;
-}
-
-#visualBtn{
-  grid-column:2/span 1;
+.randomSection{
+    display: inline-block;
+    background: linear-gradient(to bottom right, #6a3093, #a044ff); 
+    border-radius: 1rem;
+    
+    padding: 0.5rem;
 }

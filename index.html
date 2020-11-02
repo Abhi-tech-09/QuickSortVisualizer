@@ -2,43 +2,34 @@
 <html lang="en">
 
 <head>
+    <title>QuickSort-Visualizer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+
+    <link rel="icon" href="ascending-sort.svg">
+    <script defer="" src="sketch.js"></script>
+    <script defer="" src="libraries/p5.min.js"></script>
 </head>
 
 <body>
-    <div class="tools"> 
-        <div class="inputSection">
-            <div class="customInput">  
-                <span id="customHeading">Custom Input</span>
+    <div class="tools">
 
-                <h5 id="customSz">Size</h5>
-                <input type="number" name="NofElements" id="customSzIpt">
-
-                <h5 id="customEle">Elements</h5>
-                <input type="text" name="" id="customEleIpt">
-            </div>
-
-            <div class="randomInput">
-                <span id="randomHeading">Random Input</span>
-
-                <span class="randomSz"><input type="checkbox" name="" id="tick" onclick="clicked()" >Size<input type="number" name="" id="randomSzIpt" disabled></span>
-
-                <button id="genArr" onclick="generate()">Generate Array</button>
-            </div>
+        <div class="customSection">
+            <h4 id="customHeading">Custom Input</h4>
+            <span id="customEle">Elements</span>
+            <input type="text" id="customEleIpt" placeholder="Enter elements separated with ','">
         </div>
 
-        <div class="process">
-            <button id="shuffleBtn" >Shuffle Array</button>
-            <button  id="visualBtn">Visualise</button>
+        <div class="randomSection">
+            <h4 id="randomHeading">Random Input</h4>
+            Size<input type="number" id="randomSzIpt" placeholder="No. of elements (Optional)">
+            <button id="genArr" onclick="generate()">Generate Array</button>
         </div>
 
+        <button id="shuffleBtn">Shuffle Array</button>
+        <button  id="visualBtn">Visualise</button>
     </div>
-
-    <script src="sketch.js"></script>
-    <script src="libraries/p5.min.js"></script>
 </body>
 
 </html>
