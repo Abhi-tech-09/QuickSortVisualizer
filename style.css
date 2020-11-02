@@ -76,10 +76,12 @@ html, body {
   grid-template-columns: repeat(2,1fr);
 }
 
-#randomBtn{
+#shuffleBtn{
   grid-column: 1/span 1;
+  height:100px;
 }
 
 #visualBtn{
   grid-column:2/span 1;
 }
+
