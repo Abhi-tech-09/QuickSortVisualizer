@@ -3,92 +3,13 @@ html, body {
   padding: 0;
 }
 
-<<<<<<< HEAD
 .tools{
     display: grid;
-    background-color:  gainsboro;
-    margin: 0;
-    /* background: linear-gradient(280deg, rgba(2,0,36,1) 0%, rgba(9,47,121,1) 42%, rgba(0,212,255,1) 100%); */
-    grid-template-columns: repeat(2,min-content);
-}
-
-.inputSection{
-    display: grid;
-    padding: 0.6em 0.7em;
-    grid-template-columns: repeat(2,max-content);  
-    grid-column: 1/span 1;
-    grid-column-gap: 1em;
-    justify-content: space-between;
-}
-
-/* Input  */
-.customInput{
-  display: grid;
-  /* text-align: center; */
-  padding: 0.1em 0.3em;
-  font-size: 1.3em; 
-  grid-template-columns: repeat(2,min-content);
-  grid-template-rows: 1fr 1fr 1fr;
-  vertical-align: middle;
-  grid-gap: 0.1em;
-}
-
-#customHeading{
-  grid-area: 1/1 / 1/-1;
-}
-
-#customSz{
-  grid-area: 2/1 / 2/2;
-  margin: 0;
-}
-
-#customEle {
-  grid-area: 3/1 / 3/2;
-  margin: 0;
-}
-
-#customSzIpt{
-  grid-area: 2/2 / 2/-1;
-}
-
-#customEleIpt{
-  grid-area: 3/2 / 3/-1;
-}
-
-.randomInput{
-  display: grid;
-  /* justify-content: center; */
-  /* text-align: center; */
-  grid-template-rows: repeat(2,1fr);
-}
-
-#randomHeading{
-  grid-row: 1/2;
-  font-size: 1.3em;
-}
-
-#randomSz{
-  grid-row:2/3;
-}
-
-.process{
-  grid-column: 2/-1;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-}
-
-#shuffleBtn{
-  grid-column: 1/span 1;
-  height:100px;
-}
-
-#visualBtn{
-  grid-column:2/span 1;
-=======
-#tools{
-    grid-template-columns: repeat(3, max-content);
-    padding: 1rem;
-    gap: 1rem
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0.1em;
+    height: 98px;
+    background-color : #243B55;
 }
 
 button{
@@ -102,20 +23,50 @@ button{
     cursor: pointer;
 }
 
+input{
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0.2em;
+  text-align: center;
+}
+
 .customSection{
     display: inline-block;
     background: linear-gradient(to bottom right, #6a3093, #a044ff); 
-    border-radius: 1rem;
-    
-    padding: 0.5rem;
+    border-radius: 0.2rem;
+    padding-left: 0.3rem;
+    margin-left: 3px;
+}
+
+#customEleIpt{
+  width: 75%;
 }
 
 .randomSection{
     display: inline-block;
     background: linear-gradient(to bottom right, #6a3093, #a044ff); 
-    border-radius: 1rem;
-    
+    border-radius: 0.2rem;
     padding: 0.5rem;
->>>>>>> 33cc817cd5571ee366ae3c976addab10a895d3c4
 }
 
+#btnSection{
+  grid-area: 1/3/1/4;
+  display:grid;
+  grid-gap: 0.1em;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,1fr);
+  
+}
+
+#genArr{
+  grid-area: 2/1/-1/-1;
+  font-size: 20px;
+}
+
+#shuffleBtn{
+  font-size: 20px;
+}
+
+#visualBtn{
+  font-size: 20px;
+}

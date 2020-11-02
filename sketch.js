@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-
-var w = window.innerWidth,
-	h = window.innerHeight;
-	toolsHeight = document.querySelector(".tools").offsetHeight;
-=======
 var w = window.innerWidth, h = window.innerHeight,
     toolsHeight = document.querySelector('.tools').offsetHeight,
-    n = 0, a = [], flag = [], cur = -1, it1 = -1, it2 = -1, isCustom, speed = 200;
->>>>>>> 33cc817cd5571ee366ae3c976addab10a895d3c4
+	n = 0, a = [], flag = [], cur = -1, it1 = -1, it2 = -1, isCustom, speed = 700,	
+    counter = document.querySelector('#counter');
 
 const genBtn = document.querySelector('#genArr');
 const shuffleBtn = document.querySelector('#shuffleBtn');
@@ -56,23 +50,6 @@ function isSorted(arr) {
 	return temp;
 }
 
-<<<<<<< HEAD
-const shuffleBtn = document.querySelector('#shuffleBtn');
-shuffleBtn.addEventListener("click",()=>{
-	console.log(a);
-	let temp = [];
-	let val;
-	let length=a.length;
-	
-	while(temp.length<length){
-	let idx = Math.round(random(0,a.length-1));
-	val = a[idx] ;
-	a.splice(idx,1);
-	temp.push(val);}
-
-	a = temp
-	console.log(temp);
-=======
 shuffleBtn.addEventListener('click', () => {
 	let temp = [], val, len = a.length;
 
@@ -91,7 +68,6 @@ shuffleBtn.addEventListener('click', () => {
 	a = temp;
     flag.fill(0);
     it1 = it2 = cur = -1;
->>>>>>> 33cc817cd5571ee366ae3c976addab10a895d3c4
 });
 
 function draw() {
@@ -170,4 +146,24 @@ function windowResized() {
 	w = window.innerWidth;
 	h = window.innerHeight;
 	resizeCanvas(w, h);
+}
+
+function changeSpeed1(){ 
+	if(speed<1000)
+		speed+=100;
+	else
+		speed+=1000;
+		counter.innerText = speed;
+}
+function changeSpeed2(){ 
+	speed = 700; 
+	counter.innerText = speed;
+}
+function changeSpeed3(){ 
+	if(speed>1000)
+		speed-=1000;
+	else if(speed>100)
+		speed-=100;
+	counter.innerText = speed;
+	
 }
