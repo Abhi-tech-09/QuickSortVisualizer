@@ -3,6 +3,7 @@ html, body {
   padding: 0;
 }
 
+<<<<<<< HEAD
 .tools{
     display: grid;
     background-color:  gainsboro;
@@ -83,5 +84,38 @@ html, body {
 
 #visualBtn{
   grid-column:2/span 1;
+=======
+#tools{
+    grid-template-columns: repeat(3, max-content);
+    padding: 1rem;
+    gap: 1rem
+}
+
+button{
+    background: white;
+    padding: 0.2em;    
+    font-size: 1.5rem;
+    outline: none;
+    border-radius: 0.5rem;
+    border: 0.25rem solid #17a2b8;
+    
+    cursor: pointer;
+}
+
+.customSection{
+    display: inline-block;
+    background: linear-gradient(to bottom right, #6a3093, #a044ff); 
+    border-radius: 1rem;
+    
+    padding: 0.5rem;
+}
+
+.randomSection{
+    display: inline-block;
+    background: linear-gradient(to bottom right, #6a3093, #a044ff); 
+    border-radius: 1rem;
+    
+    padding: 0.5rem;
+>>>>>>> 33cc817cd5571ee366ae3c976addab10a895d3c4
 }
 
