@@ -85,6 +85,9 @@ function draw() {
 		let mul = w % a.length;
 		mul /= a.length;
 		hRatio += mul;
+		let mx1 = h - toolsHeight - 10;
+		let mx2 = Math.max(...a);
+		let factor = mx1/mx2;
 
 		for (let i = 0; i < a.length; ++i) {
 			if (flag[i] == 3) fill('#3b5bff');
@@ -92,7 +95,7 @@ function draw() {
 			else if (flag[i] == 1) fill('#F00000');
 			else fill(255);
 
-			rect(x, h - a[i] - toolsHeight, hRatio, a[i]);
+			rect(x, h - (a[i]*factor) - toolsHeight, hRatio, a[i]*factor);
 			x += hRatio;
 		}
 
