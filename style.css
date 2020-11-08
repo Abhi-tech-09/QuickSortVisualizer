@@ -1,72 +1,149 @@
-html, body {
-  margin: 0;
-  padding: 0;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+
+	overflow-y: hidden; 
+	overflow-x: hidden;
+	
 }
 
-.tools{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    padding: 0.1em;
-    height: 98px;
-    background-color : #243B55;
+.tools {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+	padding: 0.1em;
+	background-color: #243b55;
 }
 
-button{
-    background: white;
-    padding: 0.2em;    
-    font-size: 1.5rem;
-    outline: none;
-    border-radius: 0.5rem;
-    border: 0.25rem solid #17a2b8;
-    
-    cursor: pointer;
+#sm-screen {
+	display: none;
 }
 
-input{
-  border: 1px solid transparent;
-  border-radius: 3px;
-  padding: 0.2em;
-  text-align: center;
+button {
+	background: white;
+	padding: 0.2em;
+	font-size: 1.5rem;
+	outline: none;
+	border-radius: 0.5rem;
+	border: 0.25rem solid #17a2b8;
+	cursor: pointer;
 }
 
-.customSection{
-    display: inline-block;
-    background: linear-gradient(to bottom right, #6a3093, #a044ff); 
-    border-radius: 0.2rem;
-    padding-left: 0.3rem;
-    margin-left: 3px;
+input {
+	border: 1px solid transparent;
+	border-radius: 3px;
+	padding: 0.2em;
+	text-align: center;
 }
 
-#customEleIpt{
-  width: 75%;
+.customSection {
+	display: inline-block;
+	background: linear-gradient(to bottom right, #6a3093, #a044ff);
+	border-radius: 0.2rem;
+	padding: 0.5rem;
 }
 
-.randomSection{
-    display: inline-block;
-    background: linear-gradient(to bottom right, #6a3093, #a044ff); 
-    border-radius: 0.2rem;
-    padding: 0.5rem;
+.randomSection {
+	display: inline-block;
+	background: linear-gradient(to bottom right, #6a3093, #a044ff);
+	border-radius: 0.2rem;
+	padding: 0.5rem;
 }
 
-#btnSection{
-  grid-area: 1/3/1/4;
-  display:grid;
-  grid-gap: 0.1em;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(2,1fr);
-  
+#btnSection {
+	grid-area: 1/3/1/4;
+	display: grid;
+	grid-gap: 0.2em;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
 }
 
-#genArr{
-  grid-area: 2/1/-1/-1;
-  font-size: 20px;
+#toolbar2 {
+	display: none;
 }
 
-#shuffleBtn{
-  font-size: 20px;
+#ms {
+	font-size: 0.9rem;
+	font-weight: 500;
 }
 
-#visualBtn{
-  font-size: 20px;
+#genArr {
+	grid-area: 2/1/-1/-1;
+	font-size: 20px;
+}
+
+.shuffleBtn {
+	font-size: 20px;
+}
+
+.visualBtn {
+	font-size: 20px;
+}
+
+#control {
+	display: none;
+}
+
+@media (max-width: 1110px) {
+	#customEleIpt {
+		margin-top: 10px;
+	}
+	#randomSzIpt {
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 820px) {
+	#counter {
+		width: 120px;
+	}
+}
+
+@media (max-width: 755px) {
+	#toolbar1 {
+		display: none;
+	}
+	#toolbar2 {
+		display: block;
+	}
+	#counter {
+		width: 80px;
+	}
+	#speedElement {
+		width: 80px;
+		text-align: center;
+	}
+	#ms {
+		display: none;
+	}
+}
+
+@media (max-width: 710px) {
+	.tools {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		padding: 0.1em;
+		background-color: #243b55;
+	}
+	.speed {
+		display: none;
+	}
+	#control {
+		position: absolute;
+		display: block;
+		top: 150px;
+	}
+}
+
+@media (max-width: 600px) {
+	#sm-screen {
+		display: block;
+		width: 100%;
+	}
+	.tools {
+		display: none;
+	}
 }

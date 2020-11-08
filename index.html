@@ -2,60 +2,175 @@
 <html lang="en">
 
 <head>
-    <title>QuickSort-Visualizer</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Links -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="ascending-sort.svg">
-    <!-- Scripts -->
-    <script defer="" src="sketch.js"></script>
-    <script defer="" src="libraries/p5.min.js"></script>
+	<title>QuickSort-Visualizer</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Links -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="icon" href="ascending-sort.svg" />
 </head>
 
 <body>
-    <div class="tools">
+	<nav id="sm-screen" class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: absolute">
+		<a class="navbar-brand" style="color: white">Quick-Sort Visualizer</a>
 
-        <div class="customSection">
-            <h4 id="customHeading"><span class="badge badge-pill badge-dark">Custom Input</span></h4>
-            <span id="customEle" style="font-size: 24px;">
-                <span class="badge badge-pill badge-secondary">Array</span>
-            </span>
-            <input type="text" id="customEleIpt" placeholder="Enter elements with ','">
-        </div>
+		<button style="float: right; margin-right: 8px" class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-        <div class="randomSection">
-            <h4 id="randomHeading"><span class="badge badge-pill badge-dark">Random Input</span></h4>
-            <span style="font-size:20px;" class="badge badge-pill badge-secondary">Size</span>
-            <input type="number" id="randomSzIpt" placeholder="Size (Optional)">
-            
-        </div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Random Input
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<span class="badge badge-pill badge-secondary mx-2" style="font-size: 15px">Size
+						</span>
+						<input id="randomSzIpt" placeholder="Size (Optional)" type="number" />
+					</div>
+				</li>
 
-        <div id="btnSection">
-        <button class="btn btn-sm btn-primary"id="genArr" onclick="generate()">Generate Array</button>
-        <button class="btn btn-sm btn-success" id="shuffleBtn" >Shuffle Array</button>
-        <button class="btn btn-sm btn-danger" id="visualBtn">Visualise</button>
-        </div>   
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Custom Input
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<span class="badge badge-pill badge-secondary mx-2" style="font-size: 15px">Array
+						</span>
+						<input id="customEleIpt" placeholder="Enter with ',' " style="margin-left: 2px" />
+					</div>
+				</li>
 
-        <div class="speed">
-            <h3><span class="badge badge-pill badge-warning ">Speed</span>
-                <span id="counter" class="badge badge-pill badge-light">700</span>
-            </h3>
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group mr-2" role="group" aria-label="First group">
-                  <button type="button" class="btn btn-secondary" onclick="changeSpeed1()">Low</button>
-                </div>
-                <div class="btn-group mr-2" role="group" aria-label="Second group">
-                  <button type="button" class="btn btn-secondary" onclick="changeSpeed2()">Normal</button>
-                </div>
-                <div class="btn-group" role="group" aria-label="Third group">
-                  <button type="button" class="btn btn-secondary" onclick="changeSpeed3()">High</button>
-                </div>
-              </div>
-        </div>
+				<li class="nav-item dropdown my-2">
+					<div aria-labelledby="navbarDropdown">
+						<button class="btn btn-primary btn-sm mx-1 shuffleBtn" style="font-size: 15px">
+							Shuffle
+						</button>
+						<button class="btn btn-success btn-sm mx-1" id="navVisualBtn" style="font-size: 15px">
+							Visualize
+						</button>
+						<button class="btn btn-danger btn-sm mx-1" onclick="generate()">
+							Generate
+						</button>
+					</div>
+				</li>
 
-    </div>
+				<li class="nav-item dropdown">
+					<a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
+						<button type="button" class="btn btn-secondary mx-1" onclick="changeSpeed1()">
+							<< </button>
+								<span class="badge badge-pill badge-warning mx-3" id="speedElement">
+									Speed
+								</span>
+								<button type="button" class="btn btn-secondary mx-1" onclick="changeSpeed3()">
+									>>
+								</button>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!--  -->
+	<div class="tools">
+		<div class="customSection">
+			<h4 id="customHeading">
+				<span class="badge badge-pill badge-dark">Custom Input</span>
+			</h4>
+			<span id="customEle" style="font-size: 20px" class="badge badge-pill badge-secondary">Array
+			</span>
+			<input type="text" id="customEleIpt" placeholder="Enter elements with ','" />
+		</div>
+
+		<div class="randomSection">
+			<h4 id="randomHeading">
+				<span class="badge badge-pill badge-dark">Random Input</span>
+			</h4>
+			<span style="font-size: 20px" class="badge badge-pill badge-secondary">Size
+			</span>
+			<input type="number" id="randomSzIpt" placeholder="Size (Optional)" />
+		</div>
+
+		<div id="btnSection">
+			<button class="btn btn-sm btn-primary" id="genArr" onclick="generate()">
+				Generate Random Array
+			</button>
+			<button class="btn btn-sm btn-success shuffleBtn">
+				Shuffle Array
+			</button>
+			<button class="btn btn-sm btn-danger" id="visualBtn">
+				Visualise
+			</button>
+		</div>
+
+		<div class="speed">
+			<h3>
+				<span class="badge badge-pill badge-warning" id="speedElement">
+					Speed
+					<span id="ms"> (ms)</span></span>
+				<span id="counter" class="badge badge-pill badge-light">700</span>
+			</h3>
+
+			<div class="btn-toolbar" id="toolbar1" role="toolbar" aria-label="Toolbar with button groups">
+				<div class="btn-group mr-2" role="group" aria-label="First group">
+					<button type="button" class="btn btn-secondary" onclick="changeSpeed1()">
+						Low
+					</button>
+				</div>
+
+				<div class="btn-group" role="group" aria-label="Third group">
+					<button type="button" class="btn btn-secondary" onclick="changeSpeed3()">
+						High
+					</button>
+				</div>
+			</div>
+
+			<!-- For Media Query -->
+			<div class="btn-toolbar" id="toolbar2" role="toolbar" aria-label="Toolbar with button groups">
+				<div class="btn-group mr-2" role="group" aria-label="First group">
+					<button type="button" class="btn btn-secondary" onclick="changeSpeed1()">
+						-
+					</button>
+				</div>
+
+				<div class="btn-group" role="group" aria-label="Third group">
+					<button type="button" class="btn btn-secondary" onclick="changeSpeed3()">
+						+
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- For Media query -->
+<div id="control" class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+			<button type="button" class="btn btn-secondary" onclick="changeSpeed1()">
+				<< </button>
+					<button type="button" class="btn btn-secondary" onclick="changeSpeed3()">
+						>>
+					</button>
+		</div>
+	</div>
+
+	<div id="canvas"></div>
+
+	<!-- Script for Javascript -->
+	<script defer="" src="sketch.js"></script>
+	<script defer="" src="libraries/p5.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
