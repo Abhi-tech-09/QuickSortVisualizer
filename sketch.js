@@ -13,18 +13,20 @@ var w = window.innerWidth,
 	counter = document.querySelector('#counter');
 
 const genBtn = document.querySelector('#genArr');
+const navgenBtn = document.querySelector('#navgenArr');
 const shuffleBtn = document.querySelectorAll('.shuffleBtn');
 /* Nav */
-const navCustomInput = document.querySelector('#navCustomeEleIpt');
+const navCustomInput = document.querySelector('#navCustomEleIpt');
 const navVisQuickSort = document.querySelector('#navVisualBtn');
 /* Large */
 const customInput = document.querySelector('#customEleIpt');
-const visQuickSort = document.querySelector('#visualBtn	');
+const visQuickSort = document.querySelector('#visualBtn');
 
 function setup() {
 	let canvas = createCanvas(w, h - toolsHeight / 2.2 + smHeight / 20);
 	canvas.parent('canvas');
 	canvas.style('display', 'block');
+	
 
 	visQuickSort.addEventListener('click', function checker() {
 		if (isCustom1) {
@@ -37,7 +39,7 @@ function setup() {
 
 	navVisQuickSort.addEventListener('click', function checker() {
 		if (isCustom2) {
-			a =navCustomInput.value.split(',').map((e) => parseInt(e));
+			a = navCustomInput.value.split(',').map((e) => parseInt(e));
 		}
 
 		flag = new Array(a.length);
@@ -137,7 +139,7 @@ function draw() {
 function checkCustom() {
     
     if(customInput) isCustom1 = genBtn.disabled = customInput.value.trim().length != 0;
-    if(navCustomInput) isCustom2 = genBtn.disabled = navCustomInput.value.trim().length != 0;
+    if(navCustomInput) isCustom2 = navgenBtn.disabled = navCustomInput.value.trim().length != 0;
 }
 
 async function quickSort(arr, low, high) {
