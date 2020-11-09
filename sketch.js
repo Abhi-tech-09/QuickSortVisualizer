@@ -8,15 +8,18 @@ var w = window.innerWidth,
 	cur = -1,
 	it1 = -1,
 	it2 = -1,
-	isCustom,
+	isCustom1,isCustom2
 	speed = 700,
 	counter = document.querySelector('#counter');
 
 const genBtn = document.querySelector('#genArr');
 const shuffleBtn = document.querySelectorAll('.shuffleBtn');
+/* Nav */
+const navCustomInput = document.querySelector('#navCustomeEleIpt');
+const navVisQuickSort = document.querySelector('#navVisualBtn');
+/* Large */
 const customInput = document.querySelector('#customEleIpt');
 const visQuickSort = document.querySelector('#visualBtn	');
-const navVisQuickSort = document.querySelector('#navVisualBtn');
 
 function setup() {
 	let canvas = createCanvas(w, h - toolsHeight / 2.2 + smHeight / 20);
@@ -24,18 +27,17 @@ function setup() {
 	canvas.style('display', 'block');
 
 	visQuickSort.addEventListener('click', function checker() {
-		if (isCustom) {
+		if (isCustom1) {
 			a = customInput.value.split(',').map((e) => parseInt(e));
 		}
-
 		flag = new Array(a.length);
 		flag.fill(0);
 		quickSort(a, 0, a.length - 1);
 	});
 
 	navVisQuickSort.addEventListener('click', function checker() {
-		if (isCustom) {
-			a = customInput.value.split(',').map((e) => parseInt(e));
+		if (isCustom2) {
+			a =navCustomInput.value.split(',').map((e) => parseInt(e));
 		}
 
 		flag = new Array(a.length);
@@ -133,7 +135,9 @@ function draw() {
 }
 
 function checkCustom() {
-	isCustom = genBtn.disabled = customInput.value.trim().length != 0;
+    
+    if(customInput) isCustom1 = genBtn.disabled = customInput.value.trim().length != 0;
+    if(navCustomInput) isCustom2 = genBtn.disabled = navCustomInput.value.trim().length != 0;
 }
 
 async function quickSort(arr, low, high) {
