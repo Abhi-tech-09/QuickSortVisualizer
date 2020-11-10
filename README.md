@@ -79,7 +79,12 @@ This is an optional field to generate an array with size specified here , and th
 
 **<span style="color:#38ef7d">Green Color</span>** indicates the element is in sorted positon. 
 
+# _**References**_
 
+* For Quick-Sort Algorithm : [QuickSort Algorithm](https://www.geeksforgeeks.org/quick-sort/)
+* For learning P5.js : [p5.js Tutorial](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
+
+<br>
 
 # _**Contributors**_
 <h4> <strong>
