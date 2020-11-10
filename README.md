@@ -11,7 +11,7 @@ When we first encountered sorting Algorithms, QuickSort was the first Algo that 
 <br> 
 </p>
 
-So here is our project [QuickSort Visualizer](https://abhi-tech-09.github.io/QuickSortVisualizer/) which is a visual representation of how QuickSort Algorithm works behind the scenes.
+So here is our project [QuickSort Visualizer](https://saketthota.github.io/QuickSortVisualizer/) which is a visual representation of how QuickSort Algorithm works behind the scenes.
 
 <br>
 
