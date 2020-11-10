@@ -53,19 +53,20 @@ This is an optional field to generate an array with size specified here , and th
 ![](images/functions.png)
 * ### Generate Random Array
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If size of array is specified in Random input section, then it generates array of that size .
+    If size of array is specified in Random input section, then it generates array of that size .
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Otherwise, It will generate an array of random size filled with random values .
+    Otherwise, It will generate an array of random size filled with random values .
 
 * ### Shuffle Array
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shuffles the elements within the array which is displayed on screen.
+    Shuffles the elements within the array which is displayed on screen.
 * ### Visualize
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is the button(backbone) of the visualizer tool, when clicked visualization get started .
+    This is the button(backbone) of the visualizer tool, when clicked visualization get started .
 * ### Speed
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To control the speed of the visualization , **low** implies decreament in spped and **high** implies increment in speed .
+    To control the speed of the visualization , **low** implies decreament in spped and **high** implies increment in speed .
+<br>
 <br>
 
 # _**Visualizing**_
@@ -79,7 +80,14 @@ This is an optional field to generate an array with size specified here , and th
 
 **<span style="color:#38ef7d">Green Color</span>** indicates the element is in sorted positon. 
 
+<br>
 
+# _**References**_
+
+* For Quick-Sort Algorithm : [QuickSort Algorithm](https://www.geeksforgeeks.org/quick-sort/)
+* For learning P5.js : [p5.js Tutorial](https://www.youtube.com/watch?v=HerCR8bw_GE&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
+
+<br>
 
 # _**Contributors**_
 <h4> <strong>
