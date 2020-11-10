@@ -13,9 +13,9 @@ var w = window.innerWidth,
 	counter = document.querySelector('#counter');
 
 const genBtn = document.querySelector('#genArr');
-const navgenBtn = document.querySelector('#navgenArr');
 const shuffleBtn = document.querySelectorAll('.shuffleBtn');
 /* Nav */
+const navgenBtn = document.querySelector('#navgenArr');
 const navCustomInput = document.querySelector('#navCustomEleIpt');
 const navVisQuickSort = document.querySelector('#navVisualBtn');
 /* Large */
@@ -50,8 +50,12 @@ function setup() {
 
 function generate() {
 	let rdSize = document.querySelector('#randomSzIpt').value;
+	let navrdSize = document.querySelector('#navrandomSzIpt').value;
 	a = [];
 	n = parseInt(rdSize);
+	if(!rdSize)
+		n = parseInt(navrdSize);
+	
 
 	if (!n) n = Math.round(random(20, 100));
 
