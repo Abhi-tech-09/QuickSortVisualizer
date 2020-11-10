@@ -28,29 +28,29 @@ So here is our project [QuickSort Visualizer](https://abhi-tech-09.github.io/Qui
 ## *Landing Page*
 
 * ### Desktop View 
-![](desktop.png)
+![](images/desktop.png)
 
 * ### Tablet View
-![](tab.png)
+![](images/tab.png)
 
 * ### Mobile View
-![](mobile_new.jpg)
+![](images/mobile_new.jpg)
 
 ## *Custom Inupt*
 
 Here you can provide your custom array. The format for input is elements with **","** in between. Example : 53,20,11,9.
 
-![](custom.png)
+![](images/custom.png)
 
 ## *Random Input*
 
 This is an optional field to generate an array with size specified here , and then filled with random elements.
 
-![](random.png)
+![](images/random.png)
 
 
 ## *Functionalities*
-![](functions.png)
+![](images/functions.png)
 * ### Generate Random Array
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If size of array is specified in Random input section, then it generates array of that size .
@@ -70,7 +70,7 @@ This is an optional field to generate an array with size specified here , and th
 
 # _**Visualizing**_
 
-![https://abhi-tech-09.github.io/QuickSortVisualizer/](./screen-capture.gif)
+![https://abhi-tech-09.github.io/QuickSortVisualizer/](images/screen-capture.gif)
 
 			
 **<span style="color:#3b5bff">Blue color</span>** indicates the elements in comparision.
@@ -85,8 +85,8 @@ This is an optional field to generate an array with size specified here , and th
 <h4> <strong>
 
 * [Abhishek Sharma](https://github.com/Abhi-tech-09)
-    * [LinkedIn]()
+    * [LinkedIn](https://www.google.com)
 * [Saket Thota](https://github.com/SaketThota)
-    * [LinkedIn]()
+    * [LinkedIn](https://www.linkedin.com/in/saket-thota-163227192)
 
 </strong> 
