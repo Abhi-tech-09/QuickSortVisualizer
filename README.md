@@ -2,7 +2,7 @@
 
 **_QuickSort Visualizer_** </h1>    
 
-## Hello Everyone!
+<h2> Hello Everyone! </h2>
 
 <h4>
 Welcome, to our QuickSort Visualizer.
@@ -68,7 +68,7 @@ This is an optional field to generate an array with size specified here , and th
 * ## Speed
 
     <h3>
-	To control the speed of the visualization , <strong>low</strong> implies decreament in spped and <strong>high<strong> implies increment in speed .
+	To control the speed of the visualization , <strong>low</strong> implies decreament in speed and <strong>high<strong> implies increment in speed .
     </h3>
 <br>
 <br>
