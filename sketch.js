@@ -12,26 +12,28 @@ var w = window.innerWidth,
 	speed = 700,
 	counter = document.querySelector('#counter');
 
-const genBtn = document.querySelector('#genArr');
-const shuffleBtn = document.querySelectorAll('.shuffleBtn');
-/* Nav */
-const navgenBtn = document.querySelector('#navgenArr');
-const navCustomInput = document.querySelector('#navCustomEleIpt');
-const navVisQuickSort = document.querySelector('#navVisualBtn');
-/* Large */
-const customInput = document.querySelector('#customEleIpt');
-const visQuickSort = document.querySelector('#visualBtn');
+const genBtn = document.querySelector('#genArr'),
+    shuffleBtn = document.querySelectorAll('.shuffleBtn'),
+    navgenBtn = document.querySelector('#navgenArr'),
+    navCustomInput = document.querySelector('#navCustomEleIpt'),
+    navVisQuickSort = document.querySelector('#navVisualBtn'),
+    customInput = document.querySelector('#customEleIpt'),
+    visQuickSort = document.querySelector('#visualBtn');
 
 function setup() {
 	let canvas = createCanvas(w, h - toolsHeight / 2.2 + smHeight / 20);
 	canvas.parent('canvas');
 	canvas.style('display', 'block');
-	
 
 	visQuickSort.addEventListener('click', function checker() {
 		if (isCustom1) {
 			a = customInput.value.split(',').map((e) => parseInt(e));
-		}
+        }
+        for (let i = 0; i < a.length; ++i) { 
+            if (isNaN(a[i])) 
+                alert("Please enter valid input.");
+        }
+
 		flag = new Array(a.length);
 		flag.fill(0);
 		quickSort(a, 0, a.length - 1);
@@ -52,13 +54,12 @@ function generate() {
 	let rdSize = document.querySelector('#randomSzIpt').value;
 	let navrdSize = document.querySelector('#navrandomSzIpt').value;
 	a = [];
-	n = parseInt(rdSize);
-	if(!rdSize)
-		n = parseInt(navrdSize);
-	
+    n = parseInt(rdSize);
+    
+	if(!rdSize) n = parseInt(navrdSize);
+	if (!n) n = Math.round(random(20, 150));
 
-	if (!n) n = Math.round(random(20, 100));
-
+    n = Math.min(n, 1000);
 	a = new Array(n);
 	for (let i = 0; i < a.length; ++i) a[i] = Math.round(random(50, 500));
 	flag = new Array(a.length);
@@ -141,7 +142,6 @@ function draw() {
 }
 
 function checkCustom() {
-    
     if(customInput) isCustom1 = genBtn.disabled = customInput.value.trim().length != 0;
     if(navCustomInput) isCustom2 = navgenBtn.disabled = navCustomInput.value.trim().length != 0;
 }
@@ -192,10 +192,12 @@ function changeSpeed1() {
 	else speed += 1000;
 	counter.innerText = speed;
 }
+
 function changeSpeed2() {
 	speed = 700;
 	counter.innerText = speed;
 }
+
 function changeSpeed3() {
 	if (speed > 1000) speed -= 1000;
 	else if (speed > 100) speed -= 100;
