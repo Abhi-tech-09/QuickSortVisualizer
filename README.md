@@ -2,19 +2,19 @@
 
 **_QuickSort Visualizer_** </h1>    
 
-## Hello Everyone!
+## Hello Everyone! 
 
-<h3>
+<h4>
 Welcome, to our QuickSort Visualizer.
 When we first encountered sorting Algorithms, QuickSort was the first Algo that really fascinated us. But the flow behind the scenes was difficult to visualize since QuickSort uses recursive approach to implement Divide and conquer Technique.
 <br> 
-</h3>
+</h4>
 
-<h3>
+<h4>
 
 So here is our project [QuickSort Visualizer](https://saketthota.github.io/QuickSortVisualizer/) which is a visual representation of how QuickSort Algorithm works behind the scenes.
 
-</h3>
+</h4>
 <br>
 
 # _**Tech Used**_
@@ -67,7 +67,9 @@ This is an optional field to generate an array with size specified here , and th
     <h3>This is the button(backbone) of the visualizer tool, when clicked visualization get started .</h3>
 * ## Speed
 
-    <h3>To control the speed of the visualization , **low** implies decreament in spped and **high** implies increment in speed .</h3>
+    <h3>
+	To control the speed of the visualization , <strong>low</strong> implies decreament in speed and <strong>high<strong> implies increment in speed .
+    </h3>
 <br>
 <br>
 
