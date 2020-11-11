@@ -68,7 +68,7 @@ This is an optional field to generate an array with size specified here , and th
 * ## Speed
 
     <h3>
-	To control the speed of the visualization , **low** implies decreament in spped and **high** implies increment in speed .
+	To control the speed of the visualization , <strong>low</strong> implies decreament in spped and <strong>high<strong> implies increment in speed .
     </h3>
 <br>
 <br>
